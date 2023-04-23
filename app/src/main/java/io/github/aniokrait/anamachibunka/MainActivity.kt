@@ -21,7 +21,7 @@ import com.google.maps.android.compose.Marker
 import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.rememberCameraPositionState
 import dagger.hilt.android.AndroidEntryPoint
-import io.github.aniokrait.anamachibunka.logic.hilt.data.Heritage
+import io.github.aniokrait.anamachibunka.logic.ui.MyScaffold
 import io.github.aniokrait.anamachibunka.logic.viewmodel.HeritageViewModel
 import io.github.aniokrait.anamachibunka.ui.theme.AnamachiBunkaTheme
 
@@ -38,15 +38,17 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     //SampleMap()
-                    Column() {
-                        Dbkakunin()
-                        Button(onClick = {
-                            val heritage = Heritage(id = 1, "テスト遺産")
-                            viewModel.insertTestDate(heritage)
-                        }) {
-                            Text(text = "insert")
-                        }
-                    }
+//                    Column() {
+//                        Dbkakunin()
+//                        Button(onClick = {
+//                            val heritage = Heritage(id = 1, "テスト遺産")
+//                            viewModel.insertTestDate(heritage)
+//                        }) {
+//                            Text(text = "insert")
+//                        }
+//                    }
+
+                    MyScaffold()
                 }
             }
         }
