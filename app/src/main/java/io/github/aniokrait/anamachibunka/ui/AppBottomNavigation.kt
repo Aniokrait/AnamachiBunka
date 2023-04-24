@@ -1,4 +1,4 @@
-package io.github.aniokrait.anamachibunka.logic.ui
+package io.github.aniokrait.anamachibunka.ui
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*

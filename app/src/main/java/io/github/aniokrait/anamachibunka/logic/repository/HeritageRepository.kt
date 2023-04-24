@@ -1,7 +1,6 @@
 package io.github.aniokrait.anamachibunka.logic.repository
 
-import io.github.aniokrait.anamachibunka.logic.hilt.data.Heritage
-import io.github.aniokrait.anamachibunka.logic.hilt.data.HeritageDao
+import io.github.aniokrait.anamachibunka.logic.database.Heritage
 
 interface HeritageRepository {
     suspend fun getHeritages() : List<Heritage>
