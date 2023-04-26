@@ -23,7 +23,6 @@ class HeritageViewModel @Inject constructor(
 
     fun getHeritages() {
         CoroutineScope(Dispatchers.IO).launch {
-//            val heritages = heritageRepository.getHeritages()
             val heritages = getNearHeritagesUseCase()
             _uiState.value = UiState(heritages)
         }

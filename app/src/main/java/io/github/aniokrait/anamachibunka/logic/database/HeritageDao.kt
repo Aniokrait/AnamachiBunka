@@ -11,4 +11,7 @@ interface HeritageDao {
 
     @Insert
     fun insert(heritage: Heritage)
+
+    @Insert
+    fun insertAll(vararg heritage: Heritage)
 }

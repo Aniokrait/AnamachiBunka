@@ -8,4 +8,5 @@ import javax.inject.Inject
 class HeritageInnerDbDatasource @Inject constructor(private val heritageDao: HeritageDao): HeritageRepository {
     override suspend fun getHeritages(): List<Heritage> = heritageDao.getHeritages()
     override suspend fun insert(heritage: Heritage) = heritageDao.insert(heritage)
+    override suspend fun insertAll(vararg heritage: Heritage) = heritageDao.insertAll(*heritage)
 }
