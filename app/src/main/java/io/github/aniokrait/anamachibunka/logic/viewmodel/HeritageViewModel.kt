@@ -15,7 +15,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HeritageViewModel @Inject constructor(
-//    private val heritageRepository: HeritageRepository,
     private val getNearHeritagesUseCase: GetNearHeritagesUseCase
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(UiState())
