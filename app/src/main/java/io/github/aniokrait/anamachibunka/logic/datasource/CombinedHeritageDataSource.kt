@@ -21,6 +21,10 @@ class CombinedHeritageDataSource @Inject constructor(
         return remoteHeritages
     }
 
+    override suspend fun getHeritageById(id: Int): Heritage {
+        return localRepository.getHeritageById(id)
+    }
+
     override suspend fun insert(heritage: Heritage) {
         localRepository.insert(heritage)
     }

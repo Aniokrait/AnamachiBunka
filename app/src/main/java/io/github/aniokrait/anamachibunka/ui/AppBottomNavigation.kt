@@ -69,16 +69,21 @@ fun MyScaffold() {
             composable(Screen.Home.route) {
                 Home(navigate = { heritageId ->
                     navController.navigate(
-                        Screen.HeritageDetail.route + heritageId
+                        "heritageDetail/$heritageId"
                     )
                 })
             }
             composable(Screen.Account.route) { Account(navController) }
             composable(
                 Screen.HeritageDetail.route,
-                arguments = listOf(navArgument("userId") { type = NavType.StringType })
+                arguments = listOf(navArgument("heritageId") { type = NavType.StringType })
             ) { backStackEntry ->
-                HeritageDetailPage(backStackEntry.arguments?.getString("heritageId"))
+                val heritageViewModel: HeritageViewModel = hiltViewModel()
+                HeritageDetailPage(backStackEntry.arguments?.getString("heritageId"),
+                    { id -> heritageViewModel.getHeritageById(id) },
+                    heritageViewModel.heritageDetailState
+
+                )
             }
         }
     }
@@ -97,7 +102,7 @@ fun Home(
         val heritage = heritageViewModel.uiState.collectAsState().value.heritages
         if(heritage.isNotEmpty()) {
             Button(onClick = { navigate(heritage[0].id) }) {
-                Text("Home${heritage[0].name}")
+                Text("${heritage[0].name}")
             }
         }
     }

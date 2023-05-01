@@ -9,6 +9,9 @@ interface HeritageDao {
     @Query("SELECT * FROM heritages")
     fun getHeritages(): List<Heritage>
 
+    @Query("SELECT * FROM heritages WHERE id = :id")
+    fun getHeritageById(id: Int): Heritage
+
     @Insert
     fun insert(heritage: Heritage)
 
