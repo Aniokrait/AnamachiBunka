@@ -5,7 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -21,7 +20,7 @@ import com.google.maps.android.compose.Marker
 import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.rememberCameraPositionState
 import dagger.hilt.android.AndroidEntryPoint
-import io.github.aniokrait.anamachibunka.logic.ui.MyScaffold
+import io.github.aniokrait.anamachibunka.ui.MyScaffold
 import io.github.aniokrait.anamachibunka.logic.viewmodel.HeritageViewModel
 import io.github.aniokrait.anamachibunka.ui.theme.AnamachiBunkaTheme
 

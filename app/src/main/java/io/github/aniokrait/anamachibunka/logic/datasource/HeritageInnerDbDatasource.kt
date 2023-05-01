@@ -1,13 +1,15 @@
 package io.github.aniokrait.anamachibunka.logic.datasource
 
-import io.github.aniokrait.anamachibunka.logic.hilt.data.Heritage
-import io.github.aniokrait.anamachibunka.logic.hilt.data.HeritageDao
+import io.github.aniokrait.anamachibunka.logic.database.Heritage
+import io.github.aniokrait.anamachibunka.logic.database.HeritageDao
 import io.github.aniokrait.anamachibunka.logic.repository.HeritageRepository
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import io.github.aniokrait.anamachibunka.logic.repository.LocalHeritageRepository
 import javax.inject.Inject
 
-class HeritageInnerDbDatasource @Inject constructor(private val heritageDao: HeritageDao): HeritageRepository {
+class HeritageInnerDbDatasource @Inject constructor(private val heritageDao: HeritageDao): LocalHeritageRepository {
     override suspend fun getHeritages(): List<Heritage> = heritageDao.getHeritages()
+    override suspend fun getHeritageById(id: Int): Heritage = heritageDao.getHeritageById(id)
+
     override suspend fun insert(heritage: Heritage) = heritageDao.insert(heritage)
+    override suspend fun insertAll(vararg heritage: Heritage) = heritageDao.insertAll(*heritage)
 }

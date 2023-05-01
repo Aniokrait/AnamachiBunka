@@ -1,4 +1,4 @@
-package io.github.aniokrait.anamachibunka.logic.hilt.data
+package io.github.aniokrait.anamachibunka.logic.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

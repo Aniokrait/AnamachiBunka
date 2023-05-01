@@ -2,4 +2,5 @@
     <string name="app_name">AnamachiBunka</string>
     <string name="home">home</string>
     <string name="account">account</string>
+    <string name="heritageDetail">heritageDetail</string>
 </resources>

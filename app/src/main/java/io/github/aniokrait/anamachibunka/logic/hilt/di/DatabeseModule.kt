@@ -7,8 +7,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import io.github.aniokrait.anamachibunka.logic.hilt.data.AppDatabase
-import io.github.aniokrait.anamachibunka.logic.hilt.data.HeritageDao
+import io.github.aniokrait.anamachibunka.logic.database.AppDatabase
+import io.github.aniokrait.anamachibunka.logic.database.HeritageDao
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
